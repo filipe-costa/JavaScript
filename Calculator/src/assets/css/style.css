@@ -1,0 +1,89 @@
+/* Universal style */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+}
+
+/* Grid styles */
+.container {
+    margin: 25px auto;
+}
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+}
+/* Calculator styles */
+.display {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: solid 1px black;
+    text-align: right;
+}
+.calc,
+.entry {
+    width: 100%;
+    height: 2rem;
+}
+.entry {
+    font-size: 2rem;
+}
+.btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: auto;
+    padding: 1rem;
+    background-color: rgba(135, 206, 250, 0.8);
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+    width: 25%;
+}
+.btn-zero,
+.btn-equal {
+    flex-grow: 2;
+}
+.btn:hover {
+    background-color: rgba(72, 180, 247, 1);
+}
+.btn-left {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+.btn-middle-left {
+    border-bottom: solid 1px black;
+    border-right: solid 1px black;
+}
+.btn-middle-right {
+    border-bottom: solid 1px black;
+}
+
+.btn-right {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+.btn-bottom-left {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+.btn-bottom-right {
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+/* Media Queries */
+@media only screen and (min-width: 500px) {
+    .container {
+        max-width: 400px;
+    }
+}
