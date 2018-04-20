@@ -7,8 +7,7 @@ const display = {
 // Data Structures
 const calculator = {
     entry: "0", // holds the entry
-    result: "0", // hold the result
-    prevResult: "0" // hold the previous result
+    result: "0" // hold the result
 }
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const operators = ["*", "/", "+", "-"];
