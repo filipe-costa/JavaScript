@@ -1,117 +1,133 @@
 // JavaScript Calculator
-// Display Elements
-const display = {
-    entry: document.querySelector(".entry"),
-    result: document.querySelector(".calc")
-}
-// Data Structures
+// REGEX to fix floating point notation: /([\+\*\-\/]?([0-9]*[.])[0-9]+$)/g
+// Variables
+const screenCurrentEntry = document.querySelector(".entry");
+const screenTotalResult = document.querySelector(".total");
+
+// Data structures
+// Objects
 const calculator = {
-    entry: "0", // holds the entry
-    result: "0" // hold the result
-}
+    currentEntry: "0", // Hold the current entry
+    currentResult: "0" // Hold the current result
+};
+// Arrays
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const operators = ["*", "/", "+", "-"];
 const operators1 = ["."];
-// Reusable functions
-function updateEntry() {
-  display.entry.textContent = calculator.entry;
+
+// Evaluate arithmetic without eval -> Reverse Polish Notation, for later.
+
+// Functions
+// updateScreenWithCurrentEntry
+function updateScreenWithCurrentEntry() {
+    screenCurrentEntry.textContent = calculator.currentEntry;
 }
-function displayResult() {
-  display.result.textContent = calculator.result;
+// updateCurrentResult()
+function updateScreenWithCurrentResult() {
+    screenTotalResult.textContent = calculator.currentResult;
 }
-function clearEntry() {
-  // clears entry
-  // Removes 0
-  calculator.entry = calculator.entry.slice(0, -1);
-  if (calculator.entry == "") {
-    calculator.entry = "0";
-  }
-  updateEntry();
+// clearCurrentEntry()
+function clearCurrentEntry() {
+    calculator.currentEntry = calculator.currentEntry.slice(0, -1);
+    // If currentEntry is empty string
+    if (calculator.currentEntry == "") {
+        calculator.currentEntry = "0";
+    }
+    updateScreenWithCurrentEntry();
 }
-function clearsAll() {
-  // clears all
-  calculator.entry = "0";
-  calculator.result = "0";
-  updateEntry();
-  displayResult();
+// clearAllEntries()
+function clearAllEntries() {
+    calculator.currentEntry = "0";
+    calculator.currentResult = "0";
+    updateScreenWithCurrentEntry();
+    updateScreenWithCurrentResult();
 }
-function result() {
-  let result = eval(calculator.entry);
-  result = Math.round(result * 100) / 100;
-  calculator.result = result.toString();
-  calculator.entry = calculator.result;
-  displayResult();
-  updateEntry();
+// getTotal()
+function getTotal() {
+    let total = eval(calculator.currentEntry);
+    total = Math.round(total * 100) / 100;
+    calculator.currentResult = total.toString();
+    calculator.currentEntry = calculator.currentResult;
+    updateScreenWithCurrentResult();
+    updateScreenWithCurrentEntry();
 }
-// Function to check for input entries
-function inputs(input) {
-  if (input === "CE") {
-    clearEntry();
-  } else if (input === "AC") {
-    clearsAll();
-  } else if (input === "=") {
-    result();
-  } else if (operators.includes(input)) {
-    helpers(input);
-  } else if (operators1.includes(input)) {
-    helpers(input);
-  } else if (numbers.includes(input)) {
-    helpers(input);
-  } else {
-    console.log("Hack me!");
-    return false;
-  }
-}
-// Helpers function to check for conditions
-function helpers(input) {
-    if (calculator.entry === "0" && calculator.entry.length === 1 && numbers.includes(input)) {
-        // Removes 0
-        calculator.entry = input;
-        updateEntry();
-    } else if (calculator.entry === "0" && operators.includes(input)) {
-        calculator.entry += input;
-        updateEntry();
-    } else if (numbers.includes(input) && calculator.entry.length === 1 && calculator.entry !== "0") {
-        calculator.entry += input;
-        updateEntry();
-    } else if (operators.includes(input)) {
-        // check if the last character of the entry is an operator and not a dot
-        let lastOfStr = calculator.entry[calculator.entry.length - 1];
-        // if it is, replace by the new one
+// checkInputValidation(input)
+function checkInputValidation(input) {
+    // gets the last character of the entry
+    let lastOfStr = calculator.currentEntry[calculator.currentEntry.length - 1];
+    // gets the entry
+    let isEntry = calculator.currentEntry;
+    // regex for floating point numbers
+    let isFloat = /([\+\*\-\/]?([0-9]*[.])[0-9]+$)/g;
+    if (calculator.currentEntry === "0" && calculator.currentEntry.length === 1 && numbers.includes(input)) {
+        // Replace 0 with the number
+        calculator.currentEntry = input;
+        updateScreenWithCurrentEntry();
+    } else if (calculator.currentEntry === "0" && operators.includes(input)) {
+        calculator.currentEntry += input;
+        updateScreenWithCurrentEntry();
+    } else if (operators.includes(input)){
+        // if last character is an operator and not a dot
+        // replace it with new one
         if (operators.includes(lastOfStr) && lastOfStr !== ".") {
-            calculator.entry = calculator.entry.slice(0, -1);
-            calculator.entry += input;
-            updateEntry();
+            calculator.currentEntry = calculator.currentEntry.slice(0, -1);
+            calculator.currentEntry += input;
+            updateScreenWithCurrentEntry();
         } else {
-            calculator.entry += input;
-            updateEntry();
+            calculator.currentEntry += input;
+            updateScreenWithCurrentEntry();
         }
-    } else if(operators1.includes(input)) {
-        // Get  current entry
-        let isEntry = calculator.entry;
-        // check if the last character of the entry is a dot
-        let lastOfStr = calculator.entry[calculator.entry.length - 1];
-        // Regex to for floating point numbers
-        let isFloat = /([\+\*\-\/]?([0-9]*[.])[0-9]+$)/g;
+    } else if(operators1.includes(input)){
         if(lastOfStr === "."){
             return false;
-        } else if(isFloat.test(isEntry) && input === "."){
+        } else if (isFloat.test(isEntry) && input === "."){
             return false;
         } else {
-            calculator.entry += input;
-            updateEntry();
+            calculator.currentEntry += input;
+            updateScreenWithCurrentEntry();
         }
     } else {
-        // Otherwise, it is a number:
-        calculator.entry += input;
-        updateEntry();
+        // It is a number
+        calculator.currentEntry += input;
+        updateScreenWithCurrentEntry();
     }
 }
-// Add event listeners to the buttons
+// inputs
+function calculatorInputs(input) {
+    switch (input) {
+        case "CE":
+            clearCurrentEntry();
+            break;
+        case "AC":
+            clearAllEntries();
+            break;
+        case "=":
+            getTotal();
+            break;
+        case "*":
+            checkInputValidation(input);
+            break;
+        case "/":
+            checkInputValidation(input);
+            break;
+        case "+":
+            checkInputValidation(input);
+            break;
+        case "-":
+            checkInputValidation(input);
+            break;
+        default:
+            checkInputValidation(input);
+    }
+}
+
+
+// Add event listeners to all the buttons:
 let buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
     button.addEventListener("click", function (ev) {
-        const type = ev.target.textContent;
-        inputs(type);
+        const btnText = ev.target.textContent;
+        calculatorInputs(btnText);
     });
 });
+
