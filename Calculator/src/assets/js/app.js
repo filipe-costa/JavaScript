@@ -15,43 +15,53 @@ const operators = ["*", "/", "+", "-"];
 const operators1 = ["."];
 // Reusable functions
 function updateEntry() {
-    display.entry.textContent = calculator.entry;
+  display.entry.textContent = calculator.entry;
 }
 function displayResult() {
-    display.result.textContent = calculator.result;
+  display.result.textContent = calculator.result;
+}
+function clearEntry() {
+  // clears entry
+  // Removes 0
+  calculator.entry = calculator.entry.slice(0, -1);
+  if (calculator.entry == "") {
+    calculator.entry = "0";
+  }
+  updateEntry();
+}
+function clearsAll() {
+  // clears all
+  calculator.entry = "0";
+  calculator.result = "0";
+  updateEntry();
+  displayResult();
+}
+function result() {
+  let result = eval(calculator.entry);
+  result = Math.round(result * 100) / 100;
+  calculator.result = result.toString();
+  calculator.entry = calculator.result;
+  displayResult();
+  updateEntry();
 }
 // Function to check for input entries
 function inputs(input) {
-    if (input === "CE") {
-        // clears entry
-        // Removes 0
-        calculator.entry = calculator.entry.slice(0, -1);
-        if(calculator.entry == ""){
-            calculator.entry = "0";
-        }
-        updateEntry();
-    } else if (input === "AC") {
-        // clears all
-        calculator.entry = "0";
-        calculator.result = "0";
-        updateEntry();
-        displayResult();
-    } else if (input === "=") {
-        let result = eval(calculator.entry);
-        result = Math.round(result * 100) / 100;
-        calculator.result = result.toString();
-        calculator.entry = calculator.result;
-        displayResult();
-        updateEntry();
-    } else if (operators.includes(input)) {
-        helpers(input);
-    } else if(operators1.includes(input)){
-        helpers(input);
-    } else if(numbers.includes(input)) {
-        helpers(input);
-    } else {
-        console.log("Hack me!");
-    }
+  if (input === "CE") {
+    clearEntry();
+  } else if (input === "AC") {
+    clearsAll();
+  } else if (input === "=") {
+    result();
+  } else if (operators.includes(input)) {
+    helpers(input);
+  } else if (operators1.includes(input)) {
+    helpers(input);
+  } else if (numbers.includes(input)) {
+    helpers(input);
+  } else {
+    console.log("Hack me!");
+    return false;
+  }
 }
 // Helpers function to check for conditions
 function helpers(input) {
