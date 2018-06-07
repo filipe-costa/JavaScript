@@ -2,10 +2,18 @@
 
 ###### Projects done for FreeCodeCamp Curriculum
 
-* ###### [Calculator](https://github.com/filipecosta-dev/JavaScript/tree/master/Calculator)
+* ###### [Random Quote Machine]() // Done - ES6
 
-* ###### [TicTacToe](https://github.com/filipecosta-dev/JavaScript/tree/master/TicTacToe)
+* ###### [Local Weather App]() // Done
 
-* ###### [Pomodoro Clock](https://github.com/filipecosta-dev/JavaScript/tree/master/PomodoroClock)
+* ###### [Wikipedia App]() // Done
 
-* ###### [Simon Game](https://github.com/filipecosta-dev/JavaScript/tree/master/SimonGame)
+* ###### [Twitch App]() // Done
+
+* ###### [Calculator](https://github.com/filipecosta-dev/JavaScript/tree/master/Calculator) // Done
+
+* ###### [TicTacToe](https://github.com/filipecosta-dev/JavaScript/tree/master/TicTacToe) // On works
+
+* ###### [Pomodoro Clock](https://github.com/filipecosta-dev/JavaScript/tree/master/PomodoroClock) // On works
+
+* ###### [Simon Game](https://github.com/filipecosta-dev/JavaScript/tree/master/SimonGame) // On works
