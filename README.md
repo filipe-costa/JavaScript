@@ -2,15 +2,15 @@
 
 ###### Projects done for FreeCodeCamp Curriculum
 
-* ###### [Random Quote Machine]() // Done - ES6
+* ###### [Random Quote Machine](https://github.com/filipecosta-dev/JavaScript/tree/master/RandomQuoteMachine) // Done - ES6
 
-* ###### [Local Weather App]() // Done
+* ###### [Local Weather App](https://github.com/filipecosta-dev/JavaScript/tree/master/LocalWeather) // Done
 
-* ###### [Wikipedia App]() // Done
+* ###### [Wikipedia App](https://github.com/filipecosta-dev/JavaScript/tree/master/Wikipedia) // Done
 
-* ###### [Twitch App]() // Done
+* ###### [Twitch App](https://github.com/filipecosta-dev/JavaScript/tree/master/Twitch) // Done
 
-* ###### [Calculator](https://github.com/filipecosta-dev/JavaScript/tree/master/Calculator) // Done
+* ###### [Calculator](https://github.com/filipecosta-dev/JavaScript/tree/master/Calculator) // Done -> I have to remove eval and use "shunting yard" algorithm
 
 * ###### [TicTacToe](https://github.com/filipecosta-dev/JavaScript/tree/master/TicTacToe) // On works
 
