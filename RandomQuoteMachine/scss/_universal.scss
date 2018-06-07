@@ -1,0 +1,15 @@
+$primary-background-color: rgb(192, 222, 237);
+$primary-font-family: "Roboto",
+sans-serif;
+$primary-box-sizing: border-box;
+/* Universal style */
+
+* {
+    box-sizing: $primary-box-sizing;
+}
+
+body {
+    font-size: 16px;
+    font-family: $primary-font-family;
+    background-color: $primary-background-color;
+}

@@ -1,0 +1,34 @@
+$background-transparent: transparent;
+$none: none;
+$zero: 0;
+/* Reset Styles */
+
+ul {
+  list-style: $none;
+  margin: $zero;
+  padding: $zero;
+  border: $zero;
+}
+
+a {
+  text-decoration: $none;
+  outline: $none;
+}
+
+a:focused {
+  outline: $none;
+  text-decoration: $none;
+}
+
+a:target {
+  outline: $none;
+  text-decoration: $none;
+}
+
+button {
+  margin: $zero;
+  padding: $zero;
+  border: $none;
+  outline: $none;
+  background: $background-transparent;
+}
