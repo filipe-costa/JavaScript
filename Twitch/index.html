@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Twitch APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="twitch">
+                <div class="nav">
+                    <ul class="navbar-nav">
+                        <li class="all active">streams</li>
+                        <li class="on">online</li>
+                        <li class="off">offline</li>
+                    </ul>
+                    <div class="navbar-form">
+                        <input class="navbar-form-search" type="text" placeholder="Search for a stream..." value="">
+                        <button class="navbar-form-btn" name="stream-name"><img class="navbar-form-icon" src="img/glass.svg" alt="Search"></button>
+                    </div>
+                </div>
+                
+            </div>  
+        </div>
+        <div class="row">
+            <ul class="stream">
+
+            </ul>
+        </div>
+    </div>
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- wikipedia search js -->
+<script src="js/twitch.js"></script>
+</body>
+</html>

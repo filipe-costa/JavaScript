@@ -1,0 +1,200 @@
+/* blue: 14, 155, 216
+   purple: 100, 65, 164 */
+* {
+    box-sizing: border-box;
+    margin: 0; /* reset margins */
+}
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(250, 250, 250);
+    width: calc(100vw - 17px); /* Fix scrollbar from shifting the content to the left in wider browsers */
+    padding-left: 17px; /* Add extra left padding */
+}
+/* Reset styles for ul, li, input and button */
+ul {
+    padding: 0;
+    list-style: none;
+}
+input {
+    outline: none;
+    border: none;
+    box-shadow: transparent;
+}
+a {
+    outline: none;
+    text-decoration: none;
+}
+a:focused {
+    outline: none;
+    text-decoration: none;
+}
+a:target {
+    outline: none;
+    text-decoration: none;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+/* Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    width: 100%;
+}
+/* twitch app */
+.twitch {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: rgb(100, 65, 164);
+    margin-top: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+/* navbar navbar-menu */
+.nav {
+    margin-bottom: 1.5rem;
+    min-height: 100%;
+}
+.navbar-nav {
+    height: 3.125rem; /* 50px */
+    font-size: 1.2rem;
+    color: rgb( 255, 255, 255);
+    display: flex;
+}
+.navbar-nav li {
+    height: 3.125rem;
+    width: 33.33%;
+    padding: 1rem;
+    text-align: center;
+}
+.navbar-nav .all::before, 
+.on::before, 
+.off::before {
+    content: '';
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.all::before {
+    background-color: rgb(74, 201, 255);
+}
+.on::before {
+    background-color: rgb(145, 253, 130);
+}
+.off::before {
+    background-color: rgb(255, 108, 108);
+}
+.all:hover::before,
+.on:hover::before,
+.off:hover::before {
+    -webkit-transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+}
+.active::before {
+    background-color: rgb(255, 255, 255);
+}
+/* navbar-form */
+.navbar-form {
+    width: 80%;
+    height: 2.5rem; /* 40px */
+    margin: 2.5rem auto 0 auto;
+    position: relative;
+}
+.navbar-form-search {
+    height: 2.5rem; /* 40px */
+    width: 100%;
+    padding: .9375rem 3.25rem .9375rem .9375rem; /* 15px 52px 15px 15px */
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
+}
+.navbar-form-search:hover {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
+}
+.navbar-form-btn {
+    position: absolute;
+    top: 0.5rem; /* 8px */
+    right: 0.875rem; /* 14px */
+    height: 1.5rem; /* 24px */
+    width: 1.5rem; /* 24px */
+ }
+ .navbar-form-icon {
+    height: 1.5rem; /* 24px */
+    width: 1.5rem; /* 24px */
+    opacity: .6;
+ }
+ /* stream app */
+.stream {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1em 0;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.stream-user {
+    -webkit-display: flex;
+      -ms-display: flex;
+          display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgb(14, 155, 216);
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+.online {
+    border-right: inset 3px  rgb(0, 255, 136);
+}
+.offline {
+    border-right: inset 3px  rgb(255, 60, 0);
+}
+.stream-user-photo {
+    margin-right: 1rem;
+}
+.stream-user-photo-id {
+    height: 3.125rem;
+    width: 3.125rem;
+    border: solid 2px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+.stream-user-stream {
+    height: 3.125rem;
+    margin-top: 0.2rem;
+}
+.stream-user:nth-child(even){
+    background-color: rgb(14, 108, 216); 
+}
+.stream-user-name {
+    font-size: 1.2rem;
+}
+.stream-user-description {
+    font-size: 0.7rem;
+    text-align: justify;
+}
+.hidden {
+    display: none;
+} 
+
+ /* media queries */
+@media screen and (min-width: 760px) {
+    body {
+        padding-right: 2.125rem; /* 34px */
+    }
+    .container {
+        max-width: 31.25rem; /* 500px */
+    }
+ } 
