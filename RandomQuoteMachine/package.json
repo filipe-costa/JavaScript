@@ -1,0 +1,22 @@
+{
+    "name": "randomquotemachine",
+    "version": "0.0.1",
+    "description": "Random Quote Machine API",
+    "main": "./src/app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack -d",
+        "build": "webpack -p",
+        "server": "webpack-dev-server -p"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.40",
+        "@babel/preset-env": "^7.0.0-beta.40",
+        "babel-loader": "^8.0.0-beta.0",
+        "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+        "node-sass": "^4.7.2",
+        "sass-loader": "^6.0.7",
+        "webpack": "^4.1.0",
+        "webpack-dev-server": "^3.1.0"
+    }
+}

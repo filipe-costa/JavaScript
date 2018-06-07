@@ -1,0 +1,16 @@
+$margin-auto: 0 auto;
+$full-width: 100%;
+$column-padding: 0 1rem;
+/* Grid styles */
+
+.container {
+    margin: $margin-auto;
+}
+
+.row {
+    width: $full-width;
+}
+
+.col- {
+    padding: $column-padding;
+}

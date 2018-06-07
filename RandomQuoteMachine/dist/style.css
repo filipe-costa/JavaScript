@@ -1,0 +1,94 @@
+/* Reset Styles */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+a {
+  text-decoration: none;
+  outline: none; }
+
+a:focused {
+  outline: none;
+  text-decoration: none; }
+
+a:target {
+  outline: none;
+  text-decoration: none; }
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent; }
+
+/* Universal style */
+* {
+  box-sizing: border-box; }
+
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  background-color: #c0deed; }
+
+/* Grid styles */
+.container {
+  margin: 0 auto; }
+
+.row {
+  width: 100%; }
+
+.col- {
+  padding: 0 1rem; }
+
+/* Random Quote APP */
+.random-quote {
+  display: flex;
+  flex-direction: column; }
+  .random-quote-title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0; }
+  .random-quote-generator {
+    height: 100%;
+    padding: 1.5rem;
+    text-align: justify;
+    background-color: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .random-quote-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1rem 0 0.7rem 0; }
+
+/* Buttons */
+.btn {
+  height: 3rem;
+  width: 3rem;
+  margin-left: auto; }
+  .btn img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: solid 1px rgba(255, 255, 255, 0.2); }
+  .btn:hover img {
+    border-color: white; }
+  .btn-random-tweet {
+    margin: 0 0.3rem 0 1rem; }
+
+/* Media queries */
+@media only screen and (min-width: 760px) {
+  .container {
+    max-width: 600px; }
+
+  .random-quote .random-quote-title {
+    font-size: 2rem; }
+
+  .random-quote .random-quote-generator .random-quote-text {
+    font-size: 1.5rem; }
+
+  .random-quote .random-quote-generator .random-quote-author {
+    font-size: 1rem; } }
+
+/*# sourceMappingURL=style.css.map */

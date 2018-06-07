@@ -1,0 +1,74 @@
+@import '_reset', '_universal', '_grid';
+
+$secondary-font-size: 1.5rem;
+$secondary-background-color: rgb(255, 255, 255);
+$primary-border: solid 1px rgba(255, 255, 255, 0.2);
+$primary-border-color-hover: rgba(255, 255, 255, 1);
+$full-width: 100%;
+$full-height: 100%;
+$margin-default: auto;
+$display-type-flex: flex;
+$flex-dir-column: column;
+$flex-dir-row: row;
+$flex-nowrap: nowrap;
+$primary-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+/* Random Quote APP */
+
+.random-quote {
+    display: $display-type-flex;
+    flex-direction: $flex-dir-column;
+    &-title {
+        font-size: $secondary-font-size;
+        margin: 1.5rem 0;
+    }
+    &-generator {
+        height: $full-height;
+        padding: 1.5rem;
+        text-align: justify;
+        background-color: $secondary-background-color;
+        box-shadow: $primary-box-shadow;
+    }
+    &-nav {
+        display: $display-type-flex;
+        flex-direction: $flex-dir-row;
+        flex-wrap: $flex-nowrap;
+        margin: 1rem 0 0.7rem 0;
+    }
+}
+
+/* Buttons */
+
+.btn {
+    height: 3rem;
+    width: 3rem;
+    margin-left: $margin-default;
+    img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        border: $primary-border;
+    }
+    &:hover img {
+        border-color: $primary-border-color-hover;
+    }
+    &-random-tweet {
+        margin: 0 0.3rem 0 1rem;
+    }
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 760px) {
+    .container {
+        max-width: 600px;
+    }
+    .random-quote .random-quote-title {
+        font-size: 2rem;
+    }
+    .random-quote .random-quote-generator .random-quote-text {
+        font-size: 1.5rem;
+    }
+    .random-quote .random-quote-generator .random-quote-author {
+        font-size: 1rem;
+    }
+}
